@@ -260,12 +260,12 @@ def get_simple_content(article_id, article_name):
             try:
                 dl_item_href = i.find(name="a", attrs={"class": "dl_item"}).get("href")
                 dl_item_title = i.find(name="span", attrs={"class": "dl_source"}).get("title")
-                dl_list.append(
-                    {
-                        "dl_item_title": dl_item_title,
-                        "dl_item_href": dl_item_href
-                    }
-                )
+                son_dl = {
+                            "dl_item_title": dl_item_title,
+                            "dl_item_href": dl_item_href
+                        }
+                if son_dl not in dl_list:
+                    dl_list.append(son_dl)
             except Exception as e:
                 continue
     except Exception as e:
@@ -293,6 +293,24 @@ def get_simple_content(article_id, article_name):
     except Exception as e:
         reference_data = ''
     print("参考文献：", reference_data)
+    all_data = {
+        "article_id": article_id,
+        "article_name": article_name,
+        "article_title": article_title,
+        "authors_list": authors_list,
+        "article_abstract": article_abstract,
+        "article_keyword": keyword,
+        "article_doi": DOI,
+        "article_sc_cited": sc_cited,
+        "article_year": year,
+        "article_journal_title": journal_title,
+        "article_dl_list": dl_list,
+        "article_sc_search": sc_search,
+        "related_data": related_data,
+        "reference_data": reference_data,
+    }
+    print(all_data)
+    return all_data
 
 
 if __name__ == '__main__':
