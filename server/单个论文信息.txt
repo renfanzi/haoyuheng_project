@@ -1,0 +1,373 @@
+{
+	'article_id': '7e5d6765e44e4aba2bcb2b87dc0830bb',
+	'article_name': '汽车空气动力学数值仿真研究进展',
+	'article_title': '汽车空气动力学数值仿真研究进展',
+	'authors_list': [{
+		'author_name': '张扬军',
+		'author_organization': '清华大学',
+		'author_url': '//xueshu.baidu.com/s?wd=author%3A%28%E5%BC%A0%E6%89%AC%E5%86%9B%29%20%E6%B8%85%E5%8D%8E%E5%A4%A7%E5%AD%A6&tn=SE_baiduxueshu_c1gjeupa&ie=utf-8&sc_f_para=sc_hilight%3Dperson'
+	}, {
+		'author_name': '吕振华',
+		'author_organization': '清华大学',
+		'author_url': '//xueshu.baidu.com/s?wd=author%3A%28%E5%90%95%E6%8C%AF%E5%8D%8E%29%20%E6%B8%85%E5%8D%8E%E5%A4%A7%E5%AD%A6&tn=SE_baiduxueshu_c1gjeupa&ie=utf-8&sc_f_para=sc_hilight%3Dperson'
+	}, {
+		'author_name': '徐石安',
+		'author_organization': '清华大学',
+		'author_url': '//xueshu.baidu.com/s?wd=author%3A%28%E5%BE%90%E7%9F%B3%E5%AE%89%29%20%E6%B8%85%E5%8D%8E%E5%A4%A7%E5%AD%A6&tn=SE_baiduxueshu_c1gjeupa&ie=utf-8&sc_f_para=sc_hilight%3Dperson'
+	}, {
+		'author_name': '涂尚荣',
+		'author_organization': '清华大学',
+		'author_url': '//xueshu.baidu.com/s?wd=author%3A%28%E6%B6%82%E5%B0%9A%E8%8D%A3%29%20%E6%B8%85%E5%8D%8E%E5%A4%A7%E5%AD%A6&tn=SE_baiduxueshu_c1gjeupa&ie=utf-8&sc_f_para=sc_hilight%3Dperson'
+	}, {
+		'author_name': '丛艳吉',
+		'author_organization': '清华大学',
+		'author_url': '//xueshu.baidu.com/s?wd=author%3A%28%E4%B8%9B%E8%89%B3%E5%90%89%29%20%E6%B8%85%E5%8D%8E%E5%A4%A7%E5%AD%A6&tn=SE_baiduxueshu_c1gjeupa&ie=utf-8&sc_f_para=sc_hilight%3Dperson'
+	}],
+	'article_abstract': '阐述了数值仿真在汽车空气动力学领域的研究特点及难点,介绍了汽车空气动力学数值仿真方法的研究现状,展望了这一研究领域的发展前景.',
+	'article_keyword': ['汽车', '空气动力学', '计算流体力学', '数值仿真', '综述'],
+	'article_doi': '10.3321/j.issn:1000-680X.2001.02.003',
+	'article_sc_cited': '137',
+	'article_year': '2001',
+	'article_journal_title': '汽车工程',
+	'article_dl_list': [{
+		'dl_item_title': '万方',
+		'dl_item_href': 'http://d.wanfangdata.com.cn/Periodical/qcgc200102003'
+	}, {
+		'dl_item_title': '维普',
+		'dl_item_href': 'http://www.cqvip.com/Main/Detail.aspx?id=5076882'
+	}, {
+		'dl_item_title': '知网',
+		'dl_item_href': 'http://www.cnki.com.cn/Article/CJFDTotal-QCGC200102002.htm'
+	}, {
+		'dl_item_title': 'www.wanfangdata.com.cn',
+		'dl_item_href': 'http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=qcgc200102003'
+	}, {
+		'dl_item_title': '爱学术',
+		'dl_item_href': 'http://www.ixueshu.com/document/b8bfdc734a73ef2876a21cd335ab25e4318947a18e7f9386.html'
+	}, {
+		'dl_item_title': '掌桥科研',
+		'dl_item_href': 'https://www.zhangqiaokeyan.com/academic-journal-cn_automotive-engineering_thesis/0201223241411.html'
+	}, {
+		'dl_item_title': '爱学术',
+		'dl_item_href': 'https://www.ixueshu.com/document/b8bfdc734a73ef2876a21cd335ab25e4318947a18e7f9386.html'
+	}],
+	'article_sc_search': ['计算流体力学', '汽车空气动力学', '数值仿真', '空气动力学'],
+	'related_data': [{
+		'sc_pdf_read': ['http://www.yanfabu.com/resources/editupload/files/2013112216461830.pdf'],
+		'sc_research': ['汽车空气动力学', '空气阻力系数', '车身造型', '最新进展', '数值仿真', '空气动力学'],
+		'sc_abstract': ['数值仿真CAE阐明了汽车车身开发准则,论述了汽车造型与空气动力学演绎过程,分析了汽车车身造型和汽车空气动力学研究方法,给出了未来汽车车身研究方向与研究任务.doi:10...'],
+		'sc_keyword': ['汽车'],
+		'sc_year': ['2005'],
+		'sc_title': ['汽车空气动力学与车身造型研究最新进展'],
+		'url': 'http://d.wanfangdata.com.cn/Periodical/shenydxxb200506013',
+		'sc_scholarurl': ['http://d.wanfangdata.com.cn/Periodical/shenydxxb200506013'],
+		'sc_author': [{
+			'sc_name': '张国忠',
+			'sc_affiliate_uri': ['f290cfe24edc0f36'],
+			'sc_author_uri': ['79b68d912040f8c8'],
+			'sc_label': ['1'],
+			'sc_affiliate': '东北大学机械工程与自动化学院'
+		}, {
+			'sc_name': '赖征海',
+			'sc_affiliate_uri': ['f7c378dc1a831446'],
+			'sc_author_uri': ['2812277a0d8a4605'],
+			'sc_label': '',
+			'sc_affiliate': '东北大学'
+		}]
+	}, {
+		'sc_pdf_read': '',
+		'sc_research': ['汽车外形', 'CATIA软件', '数值模拟研究', '计算流体动力学', '流场模拟'],
+		'sc_abstract': ['随着高速公路的发展和汽车车速的提高,人们对汽车的操纵稳定性,安全性,舒适性提出了越来越高的要求.特别是世界石油价格的上涨,使汽车的燃油经济性成为汽车技术的重要课...'],
+		'sc_keyword': ['计算流体动力学'],
+		'sc_year': ['2007'],
+		'sc_title': ['基于计算流体动力学汽车外形的数值模拟研究'],
+		'url': 'http://d.wanfangdata.com.cn/Thesis/D254496',
+		'sc_scholarurl': ['http://d.wanfangdata.com.cn/Thesis/D254496'],
+		'sc_author': [{
+			'sc_name': '周达顺',
+			'sc_affiliate_uri': ['e0899de39324be55'],
+			'sc_author_uri': ['8ac7c56ff05d0f32'],
+			'sc_label': '',
+			'sc_affiliate': '常德烟草机械有限责任公司'
+		}]
+	}, {
+		'sc_pdf_read': '',
+		'sc_research': ['汽车外流场', '尾流结构', '空气动力学特性', '数值模拟', '模拟研究'],
+		'sc_abstract': ['本文阐述了汽车空气动力学特性研究的背景和意义,以及进行空气动力学模拟研究的发展和应用现状,研究了汽车外流场数值模拟的理论基础。以某款轿车模型为研究对象,以计算...'],
+		'sc_keyword': ['后扰流板'],
+		'sc_year': ['2009'],
+		'sc_title': ['后扰流板对汽车空气动力学特性影响的模拟研究'],
+		'url': 'https://cdmd.cnki.com.cn/Article/CDMD-10287-2010080897.htm',
+		'sc_scholarurl': ['http://cdmd.cnki.com.cn/Article/CDMD-10287-2010080897.htm'],
+		'sc_author': [{
+			'sc_name': '任斌',
+			'sc_affiliate_uri': ['844948c6d48d6d5b'],
+			'sc_author_uri': ['2c1a985c58c6cbf'],
+			'sc_label': '',
+			'sc_affiliate': '南京航空航天大学'
+		}]
+	}, {
+		'sc_pdf_read': '',
+		'sc_research': ['汽车空气动力学', '数值模拟技术'],
+		'sc_abstract': ['本书系统地介绍了汽车空气动力学的基本研究内容,计算流体力学基础理论,汽车空气动力学研究过程中开展汽车空气动力学数值模拟的流程等.'],
+		'sc_keyword': ['汽车'],
+		'sc_year': ['2011'],
+		'sc_title': ['汽车空气动力学数值模拟技术'],
+		'url': 'http://222.197.202.32/opac/book/1362120?globalSearchWay=title',
+		'sc_scholarurl': ['http://222.197.202.32/opac/book/1362120?globalSearchWay=title'],
+		'sc_author': []
+	}, {
+		'sc_pdf_read': '',
+		'sc_research': ['外流场', '数值模拟研究', '汽车风洞', '空气动力学', '数值计算'],
+		'sc_abstract': ['在传统汽车风洞数值模拟的基础上引入侧风阵风模型,对阶背式MIRA模型在自然侧风下的风阻,压力场,外流场等表现进行了数值模拟仿真研究.研究结果表明,随着侧风风速的增加...'],
+		'sc_keyword': ['汽车风洞'],
+		'sc_year': ['2019'],
+		'sc_title': ['自然侧风作用下汽车空气动力学数值模拟研究'],
+		'url': 'http://www.cqvip.com/QK/94967B/20192/7001350848.html',
+		'sc_scholarurl': ['http://www.cqvip.com/QK/94967B/20192/7001350848.html'],
+		'sc_author': [{
+			'sc_name': '杨彬',
+			'sc_affiliate_uri': '',
+			'sc_author_uri': '',
+			'sc_label': '',
+			'sc_affiliate': '230009 安徽省 合肥市 合肥工业大学 机械工程学院'
+		}]
+	}, {
+		'sc_pdf_read': '',
+		'sc_research': ['空气动力学', '汽车空气动力学', '数值模拟', '湍流模型'],
+		'sc_abstract': ['湍流模型的选取是汽车空气动力学数值模拟研究中一个极其重要的环节,对提升数值模拟计算结果的精确性具有重大意义.对4种常用的湍流模型(k-ε,RNG k-ε,Realible k-ε,S...'],
+		'sc_keyword': ['汽车'],
+		'sc_year': ['2020'],
+		'sc_title': ['汽车空气动力学数值模拟中的湍流模型分析'],
+		'url': 'https://www.zhangqiaokeyan.com/academic-journal-cn_auto-engineer_thesis/0201278717186.html',
+		'sc_scholarurl': ['http://www.zhangqiaokeyan.com/academic-journal-cn_auto-engineer_thesis/0201278717186.html'],
+		'sc_author': [{
+			'sc_name': '周刚',
+			'sc_affiliate_uri': ['10ef9829088eb607'],
+			'sc_author_uri': ['e06dfe556b960033'],
+			'sc_label': ['1'],
+			'sc_affiliate': '招商局'
+		}]
+	}, {
+		'sc_pdf_read': '',
+		'sc_research': ['汽车空气动力学', '外流场', '动力学仿真', 'External Flow Field', '优化设计', 'Automotive Aerodynamics'],
+		'sc_abstract': ['本论文研究了汽车外流场的仿真模拟以及优化设计,在本文的撰写过程中,数值仿真模拟技术的三个最基本的过程:前处理、求解计算、后处理,始终贯穿于本论文的整个过程中,这...'],
+		'sc_keyword': ['FLUENT'],
+		'sc_year': ['2015'],
+		'sc_title': ['基于FLUENT的汽车外流场的空气动力学仿真及优化设计'],
+		'url': 'http://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CDFD&dbname=CMFD&filename=1014421447.nh',
+		'sc_scholarurl': ['http://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CDFD&dbname=CMFD&filename=1014421447.nh'],
+		'sc_author': []
+	}, {
+		'sc_pdf_read': ['http://xueshu.baidu.com/?tag=whpdf&longsign=2ee49205485ff007VzUwMDUwU1IvY25raS9DL1NDVEMxMTA2UzIvSEVGRTIwMTEwMy9oZWZlMjAxMTAzMDAxLnBkZg==9b82ebd5d00435f4'],
+		'sc_research': ['汽车空气动力学', 'CFD分析', '模拟仿真', '汽车制动'],
+		'sc_abstract': ['考虑在制动时汽车空气动力学对汽车的影响,文章以提高制动性能为目标,应用计算流体动力学的方法对汽车尾部空气流动特征进行数值仿真,对某轿车设计出一个契合在汽车行李...'],
+		'sc_keyword': ['汽车制动'],
+		'sc_year': ['2011'],
+		'sc_title': ['基于CFD分析的汽车空气动力学制动研究'],
+		'url': 'https://www.cnki.com.cn/Article/CJFDTotal-HEFE201103001.htm',
+		'sc_scholarurl': ['http://www.cnki.com.cn/Article/CJFDTotal-HEFE201103001.htm'],
+		'sc_author': [{
+			'sc_name': '尹梦晨',
+			'sc_affiliate_uri': ['571daf8d36ca74c9'],
+			'sc_author_uri': ['c3ce71f5967bd82c'],
+			'sc_label': '',
+			'sc_affiliate': '湖南大学汽车车身先进设计制造国家重点实验室'
+		}, {
+			'sc_name': '谷正气',
+			'sc_affiliate_uri': ['571daf8d36ca74c9'],
+			'sc_author_uri': ['dcae9137976bd8ef'],
+			'sc_label': ['1'],
+			'sc_affiliate': '湖南大学汽车车身先进设计制造国家重点实验室'
+		}, {
+			'sc_name': '容江磊',
+			'sc_affiliate_uri': ['571daf8d36ca74c9'],
+			'sc_author_uri': ['d2f8763b9700ddc3'],
+			'sc_label': ['1'],
+			'sc_affiliate': '湖南大学汽车车身先进设计制造国家重点实验室'
+		}]
+	}, {
+		'sc_pdf_read': '',
+		'sc_research': ['计算优化', 'CFD仿真', '高精度', '气动力'],
+		'sc_abstract': ['汽车气动力的仿真计算是计算流体力学在汽车空气动力学上的重要应用,而气动力的计算结果和风洞实验间存在一定的误差,因此提高气动力的计算精度有很大的意义.汽车气动阻...'],
+		'sc_keyword': ['CFD仿真'],
+		'sc_year': ['2012'],
+		'sc_title': ['基于CFD的汽车气动力高精度计算及优化'],
+		'url': 'https://cdmd.cnki.com.cn/Article/CDMD-10532-1013170520.htm',
+		'sc_scholarurl': ['http://cdmd.cnki.com.cn/Article/CDMD-10532-1013170520.htm'],
+		'sc_author': [{
+			'sc_name': '郭建成',
+			'sc_affiliate_uri': ['571daf8d36ca74c9'],
+			'sc_author_uri': ['ba1df2559600d734'],
+			'sc_label': ['1'],
+			'sc_affiliate': '湖南大学汽车车身先进设计制造国家重点实验室'
+		}]
+	}],
+	'reference_data': [{
+		'sc_pdf_read': '',
+		'sc_research': ['流场数值模拟', '数值模拟'],
+		'sc_abstract': ['通过对计算流体力学和汽车流场数值模拟发展的分析,归纳了可用于汽车流场数值模拟的方法及特点,最后指出了目前面临的主要问题和发展趋势.'],
+		'sc_keyword': ['汽车流场'],
+		'sc_year': ['1998'],
+		'sc_title': ['汽车流场数值模拟研究的发展概况及趋势'],
+		'url': 'https://www.cnki.com.cn/Article/CJFDTotal-ZGGL802.013.htm',
+		'sc_scholarurl': ['http://www.cnki.com.cn/Article/CJFDTotal-ZGGL802.013.htm'],
+		'sc_author': [{
+			'sc_name': '高利',
+			'sc_affiliate_uri': ['153605661ac61931'],
+			'sc_author_uri': ['7edaffd9472e67cf'],
+			'sc_label': '',
+			'sc_affiliate': '长安大学'
+		}]
+	}, {
+		'sc_pdf_read': ['http://xueshu.baidu.com/?tag=whpdf&longsign=b7070cbc9db0614eVzUwMDUwU1IvY25raS9DL1NDVEM5ODA0L0tRRFg4MDEvS1FEWDgwMTAwNC5wZGY=700147e3499ae9df'],
+		'sc_research': ['汽车绕流', '流场数值计算', '湍流模型', '小轿车', 'N－S方程', '数值计算'],
+		'sc_abstract': ['本文求解了雷诺平均Navier-Stokes方程,湍流的模拟采用了标准的两方程模型,修正的两方程模型,亚格子模型的大涡模拟三种要用有限体积方法离散求解Navier-Stokes方程.对...'],
+		'sc_keyword': ['汽车绕流'],
+		'sc_year': ['1998'],
+		'sc_title': ['小轿车绕流场数值计算和分析'],
+		'url': 'https://www.cnki.com.cn/Article/CJFDTotal-KQDX801.004.htm',
+		'sc_scholarurl': ['http://www.cnki.com.cn/Article/CJFDTotal-KQDX801.004.htm'],
+		'sc_author': [{
+			'sc_name': '朱国林',
+			'sc_affiliate_uri': ['160926617fd31c80'],
+			'sc_author_uri': ['96fa2eb23d1d50d8'],
+			'sc_label': ['1'],
+			'sc_affiliate': '中国空气动力研究与发展中心'
+		}, {
+			'sc_name': '王开春',
+			'sc_affiliate_uri': ['160926617fd31c80'],
+			'sc_author_uri': ['8c35f5563d3c50bb'],
+			'sc_label': ['1'],
+			'sc_affiliate': '中国空气动力研究与发展中心'
+		}]
+	}, {
+		'sc_pdf_read': ['http://xueshu.baidu.com/?tag=whpdf2&longsign=1d5a4b57098b37ddWjUwMDhNSFgvZmlsZW9rLzAwMC8yNS9oemxnOTAzMDA5LnBkZg==71f36a5722270e0d'],
+		'sc_research': ['空气动力学', '数值模拟', '数值模拟研究'],
+		'sc_abstract': ['将车辆外部流场视为三维定常可压缩气体的紊流流动来进行数值模 拟,求出了车辆外部三维的压力,流速分布情况,获得了车辆外形与气动阻力系数等车辆空气动力学特性的定量...'],
+		'sc_keyword': ['空气动力学'],
+		'sc_year': ['1999'],
+		'sc_title': ['车辆外部流场的数值模拟研究'],
+		'url': 'http://d.wanfangdata.com.cn/Periodical/hzlgdxxb199903010',
+		'sc_scholarurl': ['http://d.wanfangdata.com.cn/Periodical/hzlgdxxb199903010'],
+		'sc_author': [{
+			'sc_name': '常思勤',
+			'sc_affiliate_uri': ['fc5a7179692e9554'],
+			'sc_author_uri': ['9256bbe471e7757f'],
+			'sc_label': '',
+			'sc_affiliate': '华中理工大学交通科学与工程学院'
+		}]
+	}, {
+		'sc_pdf_read': '',
+		'sc_research': '',
+		'sc_abstract': ['A new method for solving the kinetic energy and dissipation across the viscous sublayer in turbulent flows is introduced. The approach uses either the law of the wall separation or the linear law to specify values for kinetic energy and ...'],
+		'sc_keyword': '',
+		'sc_year': ['1985'],
+		'sc_title': ['A new near-wall formulation for the kappa-epsilon equations of turbulence'],
+		'url': 'https://arc.aiaa.org/doi/pdfplus/10.2514/6.1986-556',
+		'sc_scholarurl': ['http://arc.aiaa.org/doi/pdfplus/10.2514/6.1986-556'],
+		'sc_author': []
+	}, {
+		'sc_pdf_read': '',
+		'sc_research': ['Computational fluid dynamics', 'Flow control', 'Rotational flow', 'Wind tunnels', 'convertible car', 'Wind effects'],
+		'sc_abstract': ['unavailable]'],
+		'sc_keyword': ['Automobiles'],
+		'sc_year': ['1995'],
+		'sc_title': ['Air flow control around the cabin of a convertible car'],
+		'url': 'https://www.sciencedirect.com/science/article/pii/038943049500003P',
+		'sc_scholarurl': ['http://www.sciencedirect.com/science/article/pii/038943049500003P'],
+		'sc_author': [{
+			'sc_name': 'Hiroshi China',
+			'sc_affiliate_uri': '',
+			'sc_author_uri': '',
+			'sc_label': '',
+			'sc_affiliate': 'Mitsubishi Motors Corp, Aichi, Jpn'
+		}, {
+			'sc_name': 'Masahiro Yoshida',
+			'sc_affiliate_uri': '',
+			'sc_author_uri': '',
+			'sc_label': '',
+			'sc_affiliate': 'Mitsubishi Motors Corp, Aichi, Jpn'
+		}, {
+			'sc_name': 'Morihiro Takada',
+			'sc_affiliate_uri': '',
+			'sc_author_uri': '',
+			'sc_label': '',
+			'sc_affiliate': 'Mitsubishi Motors Corp, Aichi, Jpn'
+		}, {
+			'sc_name': 'Kunio Nakagawa',
+			'sc_affiliate_uri': '',
+			'sc_author_uri': '',
+			'sc_label': '',
+			'sc_affiliate': 'Mitsubishi Motors Corp, Aichi, Jpn'
+		}]
+	}, {
+		'sc_pdf_read': '',
+		'sc_research': ['cooling systems', 'Road Vehicles', 'flow models', 'fluid mechanics'],
+		'sc_abstract': ['Contents: Introduction to automobile aerodynamics. Some fundamentals of fluid mechanics. Performance of cars and light vans. Aerodynamic drag of passenger ...'],
+		'sc_keyword': ['advanced propulsion systems'],
+		'sc_year': ['2003'],
+		'sc_title': ['- Aerodynamics of Road Vehicles'],
+		'url': 'https://www.sciencedirect.com/science/article/pii/B9780750612678500208',
+		'sc_scholarurl': ['http://www.sciencedirect.com/science/article/pii/B9780750612678500208'],
+		'sc_author': []
+	}, {
+		'sc_pdf_read': '',
+		'sc_research': ['Computational Fluid Dynamics', 'Viscous Flow', 'Turbulent Boundary Layer', 'Flat Plates', 'Eddy Viscosity', 'Wall Flow'],
+		'sc_abstract': ['A new method for solving the kinetic energy and dissipation across the viscous sublayer in turbulent flows is introduced. The approach uses either the law ...'],
+		'sc_keyword': ['Computational Fluid Dynamics'],
+		'sc_year': ['2013'],
+		'sc_title': ['A new near-wall formulation for the kappa-epsilon equations of turbulence'],
+		'url': 'https://arc.aiaa.org/doi/abs/10.2514/6.1986-556',
+		'sc_scholarurl': ['http://arc.aiaa.org/doi/abs/10.2514/6.1986-556'],
+		'sc_author': []
+	}, {
+		'sc_pdf_read': ['http://xueshu.baidu.com/?tag=whpdf2&longsign=29ac025f5b470c40V0RXQ0MxVDA4NzM1MTkvemJwZGYwMS8xNS9GWEtZMjAwNTA0MDIxLnBkZg==10965a3751bebceb'],
+		'sc_research': ['数学模型', '风沙流', '边界层'],
+		'sc_abstract': ['基于普朗特的边界层思想,以不可简化成稀相的风沙流体为研究对象,以风沙流的一般方程为基础,在基本假设的条件下,建立了高速轿车车身顶部过流表面的边界层微分方程并给...'],
+		'sc_keyword': ['轿车绕流'],
+		'sc_year': ['2004'],
+		'sc_title': ['高速轿车二维风沙流边界层数学模型'],
+		'url': 'http://www.cqvip.com/Main/Detail.aspx?id=10691534',
+		'sc_scholarurl': ['http://www.cqvip.com/Main/Detail.aspx?id=10691534'],
+		'sc_author': [{
+			'sc_name': '于京诺',
+			'sc_affiliate_uri': ['9a0b8342c0a32bc2'],
+			'sc_author_uri': ['63bf0491c94cebb6'],
+			'sc_label': ['1'],
+			'sc_affiliate': '鲁东大学交通学院'
+		}, {
+			'sc_name': '潘爱先',
+			'sc_affiliate_uri': ['1a0bb12fe5d725e0'],
+			'sc_author_uri': ['1a0fff495c5bcd6d'],
+			'sc_label': ['1'],
+			'sc_affiliate': '青岛建工学院'
+		}, {
+			'sc_name': '朱玉才',
+			'sc_affiliate_uri': ['bf4e1af4e0b065bc'],
+			'sc_author_uri': ['c90905c85d2b6892'],
+			'sc_label': '',
+			'sc_affiliate': '烟台师范学院'
+		}]
+	}, {
+		'sc_pdf_read': '',
+		'sc_research': '',
+		'sc_abstract': ['RT Journal ArticleSR PrintID 252706A1 Larsson, LarsA1 Broberg, LeifA1 Janson, Carl-ErikT1 A Zonal Method for Predicting External Automobile Aerodynamics, In Vehicle Aerodynamics: Recent ProgressYR 1991JF Society of Automotive EngineersVO...'],
+		'sc_keyword': '',
+		'sc_year': ['1991'],
+		'sc_title': ['A Zonal Method for Predicting External Automobile Aerodynamics'],
+		'url': 'https://www.researchgate.net/publication/300675696_A_Zonal_Method_for_Predicting_External_Automobile_Aerodynamics',
+		'sc_scholarurl': ['http://www.researchgate.net/publication/300675696_A_Zonal_Method_for_Predicting_External_Automobile_Aerodynamics'],
+		'sc_author': []
+	}, {
+		'sc_pdf_read': '',
+		'sc_research': ['Validation Study', 'Mixing Model', 'Probability Density'],
+		'sc_abstract': ['The purpose of the present study is a to demonstrate and validate the use of the conserved scalar/assumed pdf approach to simulate turbulent mixing. To achieve this goal a numerical simulation of an experimental bench-mark problem is per...'],
+		'sc_keyword': '',
+		'sc_year': ['1999'],
+		'sc_title': ['A Validation Study for a Turbulent Mixing Model Based on the Probability Density Function Approach'],
+		'url': 'https://www.researchgate.net/publication/285525440_A_validation_study_for_a_turbulent_mixing_model_based_on_the_probability_density_function_approach',
+		'sc_scholarurl': ['http://www.researchgate.net/publication/285525440_A_validation_study_for_a_turbulent_mixing_model_based_on_the_probability_density_function_approach'],
+		'sc_author': []
+	}]
+}
