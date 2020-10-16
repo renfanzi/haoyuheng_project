@@ -20,9 +20,3 @@ def get_pn(content):
     result = soup.findAll(name='span', attrs={"class": "pc"})
     page = result[-1].text.strip()
     return page
-
-
-# 获取单个详情页的数据
-def get_simple_content(url):
-    print(url)
-    # 如果这里出问题，则直接pass

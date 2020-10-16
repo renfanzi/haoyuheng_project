@@ -1,20 +1,11 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 
-import requests
 import json
 from bs4 import BeautifulSoup
 from urllib.parse import urlparse
 from urllib import parse
-
-
-def common_request(url):
-    user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
-    headers = {
-        'User-Agent': user_agent,
-    }
-    content = requests.get(url, headers=headers).text
-    return content
+from base import common_request
 
 
 # 获取相似文献
@@ -65,7 +56,9 @@ def get_related(search_releated):
                             'sc_affiliate_uri': i.get("sc_affiliate_uri", ''),
                             'sc_author_uri': i.get("sc_author_uri", ''),
                             'sc_label': i.get("sc_label", ''),
-                            "sc_affiliate": i["sc_affiliate"][0].replace("\x01", '') if isinstance(i["sc_affiliate"], list) else i["sc_affiliate"],
+                            "sc_affiliate": i["sc_affiliate"][0].replace("\x01", '') if isinstance(i["sc_affiliate"],
+                                                                                                   list) else i[
+                                "sc_affiliate"],
                         }
                         sc_author_list.append(sc_author_data)
                     except Exception as e:
@@ -107,82 +100,100 @@ def get_reference(search_reference):
     """
     reference_url = "https://xueshu.baidu.com/usercenter/paper/search?wd=citepaperuri:(%s)&type=reference&rn=10&page_no=1" % search_reference
     reference_data = json.loads(common_request(reference_url), encoding="utf-8")
+    # print(reference_data)
     data = reference_data["data"]
-    data_papers = data["papers"]
-    data_list = []
-    for data_paper in data_papers:
-        meta_di_info = data_paper.get("meta_di_info", '')
-        if meta_di_info:
-            # 这里获取详细信息
-            # pdf链接
-            sc_pdf_read = meta_di_info.get("sc_pdf_read", '')
-            # 关键词
-            sc_research = meta_di_info.get("sc_research", '')
-            # 摘要
-            sc_abstract = meta_di_info.get("sc_abstract", '')
-            # 关键词
-            sc_keyword = meta_di_info.get("sc_keyword", '')
-            # 年份
-            sc_year = meta_di_info.get("sc_year", '')
-            # 标题
-            sc_title = meta_di_info.get("sc_title", '')
-            # 链接
-            url = meta_di_info.get("url", '')
-            # scholar url
-            sc_scholarurl = meta_di_info.get("sc_scholarurl", '')
-            # 作者
-            sc_author = meta_di_info.get("sc_author", '')
+    data_papers = data.get("papers", '')
+    if data_papers:
+        data_list = []
+        for data_paper in data_papers:
+            meta_di_info = data_paper.get("meta_di_info", '')
+            if meta_di_info:
+                # 这里获取详细信息
+                # pdf链接
+                sc_pdf_read = meta_di_info.get("sc_pdf_read", '')
+                # 关键词
+                sc_research = meta_di_info.get("sc_research", '')
+                # 摘要
+                sc_abstract = meta_di_info.get("sc_abstract", '')
+                # 关键词
+                sc_keyword = meta_di_info.get("sc_keyword", '')
+                # 年份
+                sc_year = meta_di_info.get("sc_year", '')
+                # 标题
+                sc_title = meta_di_info.get("sc_title", '')
+                # 链接
+                url = meta_di_info.get("url", '')
+                # scholar url
+                sc_scholarurl = meta_di_info.get("sc_scholarurl", '')
+                # 作者
+                sc_author = meta_di_info.get("sc_author", '')
 
-            if sc_author:
-                sc_author_list = []
-                for i in sc_author:
-                    """
-                    {
-                        'sc_affiliate': ['中国\x01空气\x01动力\x01研究\x01与\x01发展\x01中心\x01'],
-                        'sc_affiliate_uri': ['160926617fd31c80'],
-                        'sc_author_uri': ['96fa2eb23d1d50d8'],
-                        'sc_label': ['1'],
-                        'sc_name': ['朱国林', '朱国林']
-                    }
-                    """
-                    try:
-                        sc_author_data = {
-                            "sc_name": i["sc_name"][0] if isinstance(i["sc_name"], list) else i["sc_name"],
-                            'sc_affiliate_uri': i.get("sc_affiliate_uri", ''),
-                            'sc_author_uri': i.get("sc_author_uri", ''),
-                            'sc_label': i.get("sc_label", ''),
-                            "sc_affiliate": i["sc_affiliate"][0].replace("\x01", '') if isinstance(i["sc_affiliate"], list) else i["sc_affiliate"],
+                if sc_author:
+                    sc_author_list = []
+                    for i in sc_author:
+                        """
+                        {
+                            'sc_affiliate': ['中国\x01空气\x01动力\x01研究\x01与\x01发展\x01中心\x01'],
+                            'sc_affiliate_uri': ['160926617fd31c80'],
+                            'sc_author_uri': ['96fa2eb23d1d50d8'],
+                            'sc_label': ['1'],
+                            'sc_name': ['朱国林', '朱国林']
                         }
-                        sc_author_list.append(sc_author_data)
-                    except Exception as e:
-                        continue
-            else:
-                sc_author_list = []
+                        """
+                        try:
+                            sc_author_data = {
+                                "sc_name": i["sc_name"][0] if isinstance(i["sc_name"], list) else i["sc_name"],
+                                'sc_affiliate_uri': i.get("sc_affiliate_uri", ''),
+                                'sc_author_uri': i.get("sc_author_uri", ''),
+                                'sc_label': i.get("sc_label", ''),
+                                "sc_affiliate": i["sc_affiliate"][0].replace("\x01", '') if isinstance(
+                                    i["sc_affiliate"], list) else i["sc_affiliate"],
+                            }
+                            sc_author_list.append(sc_author_data)
+                        except Exception as e:
+                            continue
+                else:
+                    sc_author_list = []
 
-            data_list.append({
-                "sc_pdf_read": sc_pdf_read,
-                "sc_research": sc_research,
-                "sc_abstract": sc_abstract,
-                "sc_keyword": sc_keyword,
-                "sc_year": sc_year,
-                "sc_title": sc_title,
-                "url": url,
-                "sc_scholarurl": sc_scholarurl,
-                "sc_author": sc_author_list,
-            })
-    # print(data_list)
-    return data_list
+                data_list.append({
+                    "sc_pdf_read": sc_pdf_read,
+                    "sc_research": sc_research,
+                    "sc_abstract": sc_abstract,
+                    "sc_keyword": sc_keyword,
+                    "sc_year": sc_year,
+                    "sc_title": sc_title,
+                    "url": url,
+                    "sc_scholarurl": sc_scholarurl,
+                    "sc_author": sc_author_list,
+                })
+        # print(data_list)
+        return data_list
+    else:
+        return []
 
 
 # 获取单个详情页的数据
-def get_simple_content(article_id, article_name):
+def get_simple_content(article_id):
     # 7e5d6765e44e4aba2bcb2b87dc0830bb
     simple_html_url = "https://xueshu.baidu.com/usercenter/paper/show?paperid=%s&site=xueshu_se" % article_id
+    # print(simple_html_url)
     simple_html = common_request(simple_html_url)
-
+    # print(simple_html)
     soup = BeautifulSoup(simple_html, "html.parser")
     # title : 标题（汽车空气动力学数值仿真研究进展）
-    article_title = soup.find(name='a', attrs={"data-click": "{'act_block':'main','button_tp':'title'}"}).text.strip()
+    try:
+        article_title = soup.find(name='a',
+                                  attrs={"data-click": "{'act_block':'main','button_tp':'title'}"}).text.strip()
+    except Exception as e:
+        try:
+            article_title_div = soup.find(name='div', attrs={"class": "main-info"})
+            article_title_h3 = article_title_div.find(name="h3")
+            article_title = article_title_h3.find("a").text.strip()
+        except Exception as e:
+            article_title_div = soup.find(name='div', attrs={"class": "main-info"})
+            article_title_h3 = article_title_div.find(name="h3")
+            article_title = article_title_h3.find("span").text.strip()
+
     print("标题：", article_title)
     # authors: 作者
     try:
@@ -216,7 +227,10 @@ def get_simple_content(article_id, article_name):
         authors_list = ''
     print("作者：", authors_list)
     # 摘要
-    article_abstract = soup.find(name='p', attrs={"class": "abstract"}).text.strip()
+    try:
+        article_abstract = soup.find(name='p', attrs={"class": "abstract"}).text.strip()
+    except Exception as e:
+        article_abstract = ''
     print("摘要：", article_abstract)
     # 关键字
     try:
@@ -261,9 +275,9 @@ def get_simple_content(article_id, article_name):
                 dl_item_href = i.find(name="a", attrs={"class": "dl_item"}).get("href")
                 dl_item_title = i.find(name="span", attrs={"class": "dl_source"}).get("title")
                 son_dl = {
-                            "dl_item_title": dl_item_title,
-                            "dl_item_href": dl_item_href
-                        }
+                    "dl_item_title": dl_item_title,
+                    "dl_item_href": dl_item_href
+                }
                 if son_dl not in dl_list:
                     dl_list.append(son_dl)
             except Exception as e:
@@ -282,7 +296,7 @@ def get_simple_content(article_id, article_name):
 
     # 相似文献
     try:
-        related_data = get_related(article_name)
+        related_data = get_related(article_title)
     except Exception as e:
         related_data = ''
     print("相似文献：", related_data)
@@ -295,7 +309,7 @@ def get_simple_content(article_id, article_name):
     print("参考文献：", reference_data)
     all_data = {
         "article_id": article_id,
-        "article_name": article_name,
+        "article_name": article_title,
         "article_title": article_title,
         "authors_list": authors_list,
         "article_abstract": article_abstract,
@@ -315,5 +329,5 @@ def get_simple_content(article_id, article_name):
 
 if __name__ == '__main__':
     # get_related("汽车空气动力学数值仿真研究进展")
-    # get_reference("7e5d6765e44e4aba2bcb2b87dc0830bb")
-    get_simple_content("7e5d6765e44e4aba2bcb2b87dc0830bb", "汽车空气动力学数值仿真研究进展")
+    # get_reference("1g6v0j70wq4p0mw0f47n0xf06n347113")
+    get_simple_content("1g6v0j70wq4p0mw0f47n0xf06n347113")
