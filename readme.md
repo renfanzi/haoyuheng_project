@@ -83,7 +83,7 @@
      `article_journal_title` varchar(200) NOT NULL DEFAULT '' COMMENT '来源期刊',
      `article_dl_list` text NOT NULL DEFAULT '' COMMENT '全部来源',
      `article_sc_search` text NOT NULL DEFAULT '' COMMENT '研究点分析',
-     `article_createtime` int(11) NOT NULL DEFAULT '' COMMENT '数据写入时间（GTM格式）',
+     `article_createtime` int(11) NOT NULL DEFAULT 0 COMMENT '数据写入时间（GTM格式）',
      `article_createdatetime` varchar(200) NOT NULL DEFAULT '' COMMENT '数据写入时间（字符串时间）',
      PRIMARY KEY (`id`) USING BTREE
    ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='论文详情表';
@@ -114,16 +114,16 @@
    SQL创建表字段
 
    ```sql
-   CREATE TABLE `xueshu_authors` (
-     `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键ID',
-     `xueshu_paper_id` int(11) NOT NULL DEFAULT '' COMMENT '关联论文表id',
-     `author_name` varchar(200) NOT NULL DEFAULT '' COMMENT '作者姓名',
-     `author_organization` varchar(200) NOT NULL DEFAULT '' COMMENT '作者组织机构',
-     `author_url` varchar(200) NOT NULL DEFAULT '' COMMENT '作者相关链接',
-     `author_createtime` int(11) NOT NULL DEFAULT '' COMMENT '数据写入时间（GTM格式）',
-     `author_createdatetime` varchar(200) NOT NULL DEFAULT '' COMMENT '数据写入时间（字符串时间）',
-     PRIMARY KEY (`id`) USING BTREE
-   ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='论文作者表';
+    CREATE TABLE `xueshu_authors` (
+        `id` INT ( 11 ) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键ID',
+        `xueshu_paper_id` INT ( 11 ) NOT NULL COMMENT '关联论文表id',
+        `author_name` VARCHAR ( 200 ) NOT NULL DEFAULT '' COMMENT '作者姓名',
+        `author_organization` VARCHAR ( 200 ) NOT NULL DEFAULT '' COMMENT '作者组织机构',
+        `author_url` VARCHAR ( 200 ) NOT NULL DEFAULT '' COMMENT '作者相关链接',
+        `author_createtime` INT ( 11 ) NOT NULL DEFAULT 0 COMMENT '数据写入时间（GTM格式）',
+        `author_createdatetime` VARCHAR ( 200 ) NOT NULL DEFAULT '' COMMENT '数据写入时间（字符串时间）',
+    PRIMARY KEY ( `id` ) USING BTREE
+    ) ENGINE = INNODB AUTO_INCREMENT = 1 DEFAULT CHARSET = utf8 ROW_FORMAT = COMPACT COMMENT = '论文作者表';
    ```
 
    
@@ -158,23 +158,23 @@
    SQL创建表字段
 
    ```sql
-   CREATE TABLE `xueshu_similar_references` (
-     `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键ID',
-     `xueshu_paper_id` int(11) NOT NULL DEFAULT '' COMMENT '关联论文表id',
-     `sc_type` int(11) NOT NULL DEFAULT '' COMMENT '1：相似文献，2：参考文献',
-     `sc_pdf_read` varchar(200) NOT NULL DEFAULT '' COMMENT 'pdf链接',
-     `sc_research` varchar(200) NOT NULL DEFAULT '' COMMENT '研究点分析',
-     `sc_abstract` varchar(200) NOT NULL DEFAULT '' COMMENT '摘要',
-     `sc_keyword` varchar(200) NOT NULL DEFAULT '' COMMENT '关键字',
-     `sc_year` varchar(200) NOT NULL DEFAULT '' COMMENT '年份',
-     `sc_title` varchar(200) NOT NULL DEFAULT '' COMMENT '标题',
-     `url` varchar(200) NOT NULL DEFAULT '' COMMENT 'url链接',
-     `sc_scholarurl` text NOT NULL DEFAULT '' COMMENT '学者链接',
-     `sc_author` text NOT NULL DEFAULT '' COMMENT '作者信息',
-     `sc_createtime` int(11) NOT NULL DEFAULT '' COMMENT '数据写入时间（GTM格式）',
-     `sc_createdatetime` varchar(200) NOT NULL DEFAULT '' COMMENT '数据写入时间（字符串时间）',
-     PRIMARY KEY (`id`) USING BTREE
-   ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='论文相似文献 和 论文参考文献';
+    CREATE TABLE `xueshu_similar_references` (
+        `id` INT ( 11 ) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键ID',
+        `xueshu_paper_id` INT ( 11 ) NOT NULL COMMENT '关联论文表id',
+        `sc_type` INT ( 11 ) NOT NULL COMMENT '1：相似文献，2：参考文献',
+        `sc_pdf_read` VARCHAR ( 200 ) NOT NULL DEFAULT '' COMMENT 'pdf链接',
+        `sc_research` VARCHAR ( 200 ) NOT NULL DEFAULT '' COMMENT '研究点分析',
+        `sc_abstract` VARCHAR ( 200 ) NOT NULL DEFAULT '' COMMENT '摘要',
+        `sc_keyword` VARCHAR ( 200 ) NOT NULL DEFAULT '' COMMENT '关键字',
+        `sc_year` VARCHAR ( 200 ) NOT NULL DEFAULT '' COMMENT '年份',
+        `sc_title` VARCHAR ( 200 ) NOT NULL DEFAULT '' COMMENT '标题',
+        `url` VARCHAR ( 200 ) NOT NULL DEFAULT '' COMMENT 'url链接',
+        `sc_scholarurl` text NOT NULL DEFAULT '' COMMENT '学者链接',
+        `sc_author` text NOT NULL DEFAULT '' COMMENT '作者信息',
+        `sc_createtime` INT ( 11 ) NOT NULL DEFAULT 0 COMMENT '数据写入时间（GTM格式）',
+        `sc_createdatetime` VARCHAR ( 200 ) NOT NULL DEFAULT '' COMMENT '数据写入时间（字符串时间）',
+    PRIMARY KEY ( `id` ) USING BTREE
+    ) ENGINE = INNODB AUTO_INCREMENT = 1 DEFAULT CHARSET = utf8 ROW_FORMAT = COMPACT COMMENT = '论文相似文献 和 论文参考文献';
    ```
 
    
