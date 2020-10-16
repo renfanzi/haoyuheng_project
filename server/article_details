@@ -47,7 +47,31 @@ def get_related(search_releated):
             sc_scholarurl = meta_di_info.get("sc_scholarurl", '')
             # 作者
             sc_author = meta_di_info.get("sc_author", '')
-
+            if sc_author:
+                sc_author_list = []
+                for i in sc_author:
+                    """
+                    {
+                        'sc_affiliate': ['中国\x01空气\x01动力\x01研究\x01与\x01发展\x01中心\x01'],
+                        'sc_affiliate_uri': ['160926617fd31c80'],
+                        'sc_author_uri': ['96fa2eb23d1d50d8'],
+                        'sc_label': ['1'],
+                        'sc_name': ['朱国林', '朱国林']
+                    }
+                    """
+                    try:
+                        sc_author_data = {
+                            "sc_name": i["sc_name"][0] if isinstance(i["sc_name"], list) else i["sc_name"],
+                            'sc_affiliate_uri': i.get("sc_affiliate_uri", ''),
+                            'sc_author_uri': i.get("sc_author_uri", ''),
+                            'sc_label': i.get("sc_label", ''),
+                            "sc_affiliate": i["sc_affiliate"][0].replace("\x01", '') if isinstance(i["sc_affiliate"], list) else i["sc_affiliate"],
+                        }
+                        sc_author_list.append(sc_author_data)
+                    except Exception as e:
+                        continue
+            else:
+                sc_author_list = []
             data_list.append({
                 "sc_pdf_read": sc_pdf_read,
                 "sc_research": sc_research,
@@ -57,7 +81,7 @@ def get_related(search_releated):
                 "sc_title": sc_title,
                 "url": url,
                 "sc_scholarurl": sc_scholarurl,
-                "sc_author": sc_author,
+                "sc_author": sc_author_list,
             })
     # print(data_list)
     return data_list
@@ -109,6 +133,32 @@ def get_reference(search_reference):
             # 作者
             sc_author = meta_di_info.get("sc_author", '')
 
+            if sc_author:
+                sc_author_list = []
+                for i in sc_author:
+                    """
+                    {
+                        'sc_affiliate': ['中国\x01空气\x01动力\x01研究\x01与\x01发展\x01中心\x01'],
+                        'sc_affiliate_uri': ['160926617fd31c80'],
+                        'sc_author_uri': ['96fa2eb23d1d50d8'],
+                        'sc_label': ['1'],
+                        'sc_name': ['朱国林', '朱国林']
+                    }
+                    """
+                    try:
+                        sc_author_data = {
+                            "sc_name": i["sc_name"][0] if isinstance(i["sc_name"], list) else i["sc_name"],
+                            'sc_affiliate_uri': i.get("sc_affiliate_uri", ''),
+                            'sc_author_uri': i.get("sc_author_uri", ''),
+                            'sc_label': i.get("sc_label", ''),
+                            "sc_affiliate": i["sc_affiliate"][0].replace("\x01", '') if isinstance(i["sc_affiliate"], list) else i["sc_affiliate"],
+                        }
+                        sc_author_list.append(sc_author_data)
+                    except Exception as e:
+                        continue
+            else:
+                sc_author_list = []
+
             data_list.append({
                 "sc_pdf_read": sc_pdf_read,
                 "sc_research": sc_research,
@@ -118,7 +168,7 @@ def get_reference(search_reference):
                 "sc_title": sc_title,
                 "url": url,
                 "sc_scholarurl": sc_scholarurl,
-                "sc_author": sc_author,
+                "sc_author": sc_author_list,
             })
     # print(data_list)
     return data_list
