@@ -29,14 +29,20 @@ def get_html_code_mode(content):
         pn_academic_url_list.append(academic_href)
     # print(pn_academic_url_list)
     for son_url in pn_academic_url_list:
-        print(son_url)
-        # paper_id = son_url.split("=")[1].split("&")[0]
-        # get_simple_content(paper_id)
+        # print(son_url)
+        try:
+            paper_id = son_url.split("=")[1].split("&")[0]
+            # 这个地方需要增加查重功能, 如果数据库已经存在,则不再进行下面操作
+            get_simple_content(paper_id)
+        except Exception as e:
+            continue
+        pass
 
 
 # 请求url的内容
 def request_content(search_content, pn):
     url = compose_url(search_content, pn)
+    print(url)
     content = common_request(url)
     # 获取页数代码
     page = get_pn(content)
@@ -49,4 +55,8 @@ def request_content(search_content, pn):
 
 
 if __name__ == '__main__':
-    request_content("飞行器空气动力学", '1100')
+    for i in range(0, 100):
+        pn = str(i * 10)
+        print(pn)
+        status = request_content("飞行器空气动力学", pn)
+

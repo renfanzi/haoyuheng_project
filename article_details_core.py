@@ -324,10 +324,10 @@ def get_simple_content(article_id):
         "reference_data": reference_data,
     }
     print(all_data)
-    return all_data
+    # return all_data
 
 
 if __name__ == '__main__':
     # get_related("汽车空气动力学数值仿真研究进展")
     # get_reference("1g6v0j70wq4p0mw0f47n0xf06n347113")
-    get_simple_content("1g6v0j70wq4p0mw0f47n0xf06n347113")
+    get_simple_content("1x7q0ta0ab1y08s0f7140e80j2533927")
