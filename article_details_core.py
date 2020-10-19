@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 from urllib.parse import urlparse
 from urllib import parse
 from base import common_request
+from model.model import *
 
 
 # 获取相似文献
@@ -173,7 +174,7 @@ def get_reference(search_reference):
 
 
 # 获取单个详情页的数据
-def get_simple_content(article_id):
+def get_simple_content(article_id, search_content):
     # 7e5d6765e44e4aba2bcb2b87dc0830bb
     simple_html_url = "https://xueshu.baidu.com/usercenter/paper/show?paperid=%s&site=xueshu_se" % article_id
     # print(simple_html_url)
@@ -218,11 +219,13 @@ def get_simple_content(article_id):
                 author_organization = author_organization.split(' ')[1]
             else:
                 author_organization = ''
-            authors_list.append({
+            author_sub_data = {
                 "author_name": author_name,
                 "author_organization": author_organization,
                 "author_url": author_url,
-            })
+            }
+            if author_sub_data not in authors_list:
+                authors_list.append(author_sub_data)
     except Exception as e:
         authors_list = ''
     print("作者：", authors_list)
@@ -307,21 +310,65 @@ def get_simple_content(article_id):
     except Exception as e:
         reference_data = ''
     print("参考文献：", reference_data)
-    all_data = {
-        "article_id": article_id,
-        "article_name": article_title,
+
+    # 数据库数据
+    xueshupaper_data = {
+        "technology_crawler_keyword": search_content,
+        "article_paperid": article_id,
         "article_title": article_title,
-        "authors_list": authors_list,
         "article_abstract": article_abstract,
-        "article_keyword": keyword,
+        "article_keyword": json.dumps(keyword, ensure_ascii=False),
         "article_doi": DOI,
         "article_sc_cited": sc_cited,
         "article_year": year,
         "article_journal_title": journal_title,
-        "article_dl_list": dl_list,
-        "article_sc_search": sc_search,
-        "related_data": related_data,
-        "reference_data": reference_data,
+        "article_dl_list": json.dumps(dl_list, ensure_ascii=False),
+        "article_sc_search": json.dumps(sc_search, ensure_ascii=False),
+    }
+    XueShuPaperID = XueShuPaper.insert(**xueshupaper_data).execute()
+
+    xueshuauthors_data = []
+    for i in authors_list:
+        i["xueshu_paper_id"] = XueShuPaperID
+        xueshuauthors_data.append(i)
+    XueShuAuthors.insert(xueshuauthors_data).execute()
+
+    # 1是相似文献
+    xueshusimilar_related_data_data = []
+    for i in related_data:
+        for k, v in i.items():
+            i[k] = json.dumps(v, ensure_ascii=False)
+        i["xueshu_paper_id"] = XueShuPaperID
+        i["sc_type"] = 1
+        xueshusimilar_related_data_data.append(i)
+    XueshuSimilarReferences.insert(xueshusimilar_related_data_data).execute()
+
+    # 2是参考文献
+    xueshusimilar_references_data = []
+    for i in reference_data:
+        for k, v in i.items():
+            i[k] = json.dumps(v, ensure_ascii=False)
+        i["xueshu_paper_id"] = XueShuPaperID
+        i["sc_type"] = 2
+        xueshusimilar_references_data.append(i)
+    XueshuSimilarReferences.insert(xueshusimilar_references_data).execute()
+
+    # 索引数据
+    all_data = {
+        "article_id": article_id,
+        "article_name": article_title,
+        "article_title": article_title,
+        "authors_list": json.dumps(authors_list, ensure_ascii=False),
+        "article_abstract": article_abstract,
+        "article_keyword": json.dumps(keyword, ensure_ascii=False),
+        "article_doi": DOI,
+        "article_sc_cited": sc_cited,
+        "article_year": year,
+        "article_journal_title": journal_title,
+        "article_dl_list": json.dumps(dl_list, ensure_ascii=False),
+        "article_sc_search": json.dumps(sc_search, ensure_ascii=False),
+        "related_data": json.dumps(related_data, ensure_ascii=False),
+        "reference_data": json.dumps(reference_data, ensure_ascii=False),
     }
     print(all_data)
     # return all_data
