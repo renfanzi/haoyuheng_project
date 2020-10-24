@@ -49,6 +49,6 @@ def incremental_index(indexdir, indexname, rowData):
 
 
 if __name__ == '__main__':
-    indexname = "test"
-    indexdir = "indexdir"
+    indexname = "haoyuheng"
+    indexdir = r'C:\Users\Administrator\Desktop\航天项目爬虫目录\crawling_baidu_academic\index_dir'
     incremental_index(indexdir, indexname, {})

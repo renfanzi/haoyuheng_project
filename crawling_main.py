@@ -4,7 +4,7 @@
 from get_simple_crticlel import *
 from base import common_request
 from article_details_core import get_simple_content
-from model.model import XueShuPaper
+from model.model import XueShuPaper, ErrorSearch
 
 
 # 合成url
@@ -33,15 +33,19 @@ def get_html_code_mode(content, search_content):
         # print(son_url)
         paper_id = son_url.split("=")[1].split("&")[0]
         # 这个地方需要增加查重功能, 如果数据库已经存在,则不再进行下面操作
-        if not XueShuPaper.get_or_none(XueShuPaper.article_paperid == paper_id):
-            get_simple_content(paper_id, search_content)
-        # try:
-        #     paper_id = son_url.split("=")[1].split("&")[0]
-        #     # 这个地方需要增加查重功能, 如果数据库已经存在,则不再进行下面操作
-        #     if not XueShuPaper.get_or_none(XueShuPaper.article_paperid == paper_id):
-        #         get_simple_content(paper_id, search_content)
-        # except Exception as e:
-        #     continue
+        # if not XueShuPaper.get_or_none(XueShuPaper.article_paperid == paper_id):
+        #     get_simple_content(paper_id, search_content)
+        try:
+            paper_id = son_url.split("=")[1].split("&")[0]
+            # 这个地方需要增加查重功能, 如果数据库已经存在,则不再进行下面操作
+            if not XueShuPaper.get_or_none(XueShuPaper.article_paperid == paper_id):
+                get_simple_content(paper_id, search_content)
+        except Exception as e:
+            ErrorSearch.insert(**{
+                "paper_id": paper_id,
+                "search_content": search_content
+            }).execute()
+            continue
 
 
 # 请求url的内容
@@ -49,6 +53,7 @@ def request_content(search_content, pn):
     url = compose_url(search_content, pn)
     print(url)
     content = common_request(url)
+    # print(content)
     # 获取页数代码
     # page = get_pn(content)
     # # print(page)
@@ -60,7 +65,7 @@ def request_content(search_content, pn):
 
 
 if __name__ == '__main__':
-    a = ['空气动力学', '飞行器空气动力学', '非定常空气动力学', '内流空气动力学', '气动热力学', '航天动力学', '航天器轨道动力学', '航天器姿态动力学', '航天器再入动力学', '火箭动力学',
+    a = ['空气动力学', '气动热力学', '航天动力学', '航天器轨道动力学', '航天器姿态动力学', '航天器再入动力学', '火箭动力学',
          '空间环境',
          '太空物理学', '太空化学', '太空气象学', '卫星网络技术', '星间链路技术', '网络体系结构技术', '信息发射传输技术', '信息处理技术', '卫星编队飞行技术', '分布式卫星技术',
          '航天器总体技术',
@@ -80,7 +85,9 @@ if __name__ == '__main__':
          '试验技术', '航天发射技术', '测试技术', '加注技术', '瞄准技术', '临射检查及发射技术', '指挥控制技术', '地面勤务与保障技术', '紧急故障与逃逸救生技术', '航天测控技术', '遥测技术',
          '遥控技术', '跟踪测量技术']
 
-    for i in range(0, 1):
-        pn = str(i * 10)
-        print(pn)
-        status = request_content("飞行器空气动力学", pn)
+    b = ['气动热力学', '航天动力学', '航天器轨道动力学', '航天器姿态动力学']
+    for j in b:
+        for i in range(0, 70):
+            pn = str(i * 10)
+            print(pn)
+            status = request_content(j, pn)

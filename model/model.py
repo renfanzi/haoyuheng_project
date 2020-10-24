@@ -16,10 +16,17 @@ def get_now_time():
     return int(time.time())
 
 
-db = MySQLDatabase("haoyuheng",
+#
+# db = MySQLDatabase("haoyuheng",
+#                    user="root",
+#                    password="redhat",
+#                    host="127.0.0.1",
+#                    port=3306)
+
+db = MySQLDatabase("xueshu",
                    user="root",
-                   password="redhat",
-                   host="127.0.0.1",
+                   password="xkpt2020",
+                   host="39.106.92.143",
                    port=3306)
 
 
@@ -85,6 +92,14 @@ class XueshuSimilarReferences(BaseModel):
     class Meta:
         order_by = ('id',)
         db_table = 'xueshu_similar_references'
+
+
+class ErrorSearch(BaseModel):
+    paper_id = CharField()
+    search_content = CharField()
+
+    class Meta:
+        db_table = 'error_search'
 
 
 if __name__ == '__main__':
