@@ -52,7 +52,14 @@ def get_html_code_mode(content, search_content):
 def request_content(search_content, pn):
     url = compose_url(search_content, pn)
     print(url)
-    content = common_request(url)
+    try:
+        content = common_request(url)
+    except Exception as e:
+        ErrorSearch.insert(**{
+            "paper_id": url,
+            "search_content": search_content
+        }).execute()
+        return False
     # print(content)
     # 获取页数代码
     # page = get_pn(content)
@@ -90,4 +97,4 @@ if __name__ == '__main__':
         for i in range(0, 70):
             pn = str(i * 10)
             print(pn)
-            status = request_content(j, pn)
+            request_content(j, pn)

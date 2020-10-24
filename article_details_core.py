@@ -195,7 +195,7 @@ def get_simple_content(article_id, search_content):
             article_title_h3 = article_title_div.find(name="h3")
             article_title = article_title_h3.find("span").text.strip()
 
-    print("标题：", article_title)
+    # print("标题：", article_title)
     # authors: 作者
     try:
         authors_soup_p = soup.find(name='p', attrs={"class": "author_text"})
@@ -228,13 +228,13 @@ def get_simple_content(article_id, search_content):
                 authors_list.append(author_sub_data)
     except Exception as e:
         authors_list = ''
-    print("作者：", authors_list)
+    # print("作者：", authors_list)
     # 摘要
     try:
         article_abstract = soup.find(name='p', attrs={"class": "abstract"}).text.strip()
     except Exception as e:
         article_abstract = ''
-    print("摘要：", article_abstract)
+    # print("摘要：", article_abstract)
     # 关键字
     try:
         keyword_soup_p = soup.find(name='p', attrs={"data-click": "{'button_tp':'keyword'}"})
@@ -242,32 +242,32 @@ def get_simple_content(article_id, search_content):
         keyword = [i.text.strip() for i in keyword_a]
     except Exception as e:
         keyword = ''
-    print("关键字：", keyword)
+    # print("关键字：", keyword)
     # DOI
     try:
         DOI = soup.find(name='p', attrs={"data-click": "{'button_tp':'doi'}"}).text.strip()
     except Exception as e:
         DOI = ''
-    print("DOI:", DOI)
+    # print("DOI:", DOI)
     # 被引用量
     # {'button_tp':'sc_cited'}
     try:
         sc_cited = soup.find(name='a', attrs={"data-click": "{'button_tp':'sc_cited'}"}).text.strip()
     except Exception as e:
         sc_cited = 0
-    print("被引用量：", sc_cited)
+    # print("被引用量：", sc_cited)
     # 年份
     try:
         year = soup.find(name='p', attrs={"data-click": "{'button_tp':'year'}"}).text.strip()
     except Exception as e:
         year = 0
-    print("年份：", year)
+    # print("年份：", year)
     # 来源期刊
     try:
         journal_title = soup.find(name='a', attrs={"data-click": "{'button_tp':'journal_title'}"}).text.strip()
     except Exception as e:
         journal_title = 0
-    print("来源期刊：", journal_title)
+    # print("来源期刊：", journal_title)
     # 全部来源
     try:
         dl_item_span = soup.find_all(name='span', attrs={"class": "dl_item_span"})
@@ -287,7 +287,7 @@ def get_simple_content(article_id, search_content):
                 continue
     except Exception as e:
         dl_list = []
-    print("全部来源:", dl_list)
+    # print("全部来源:", dl_list)
 
     # 研究点分析
     try:
@@ -295,21 +295,21 @@ def get_simple_content(article_id, search_content):
         sc_search = [i.get("title") for i in sc_search_soup]
     except Exception as e:
         sc_search = ''
-    print("研究点分析：", sc_search)
+    # print("研究点分析：", sc_search)
 
     # 相似文献
     try:
         related_data = get_related(article_title)
     except Exception as e:
         related_data = ''
-    print("相似文献：", related_data)
+    # print("相似文献：", related_data)
 
     # 参考文献
     try:
         reference_data = get_reference(article_id)
     except Exception as e:
         reference_data = ''
-    print("参考文献：", reference_data)
+    # print("参考文献：", reference_data)
 
     # 数据库数据
     xueshupaper_data = {
@@ -377,4 +377,4 @@ def get_simple_content(article_id, search_content):
 if __name__ == '__main__':
     # get_related("汽车空气动力学数值仿真研究进展")
     # get_reference("1g6v0j70wq4p0mw0f47n0xf06n347113")
-    get_simple_content("1x7q0ta0ab1y08s0f7140e80j2533927")
+    get_simple_content("1v1b0r807x0d06c07m2t0x1034174532", "气动热力学")
