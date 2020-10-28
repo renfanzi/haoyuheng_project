@@ -25,8 +25,8 @@ def get_now_time():
 
 db = MySQLDatabase("xueshu",
                    user="root",
-                   password="xkpt2020",
-                   host="39.106.92.143",
+                   password="xkpt",
+                   host="",
                    port=3306)
 
 
